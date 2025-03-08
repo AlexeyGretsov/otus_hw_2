@@ -6,6 +6,6 @@ SCRIPT_DIR="$(dirname $0)"
 find "$SCRIPT_DIR" -not -path "*build/*" -and \
                    -not -path "*test_package/*" -and \
                    -not -path "*tests/*" -and \
-                   \( -name "*.h" -or -name "*.cpp" \) -print0 | \
+                   \( -name "*.h" -or -name "*.cpp" -or -name "*.cc" \) -print0 | \
 xargs -0 $CLANG_TIDY $@
 
