@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
 
     for_each(ip_pool.begin(), ip_pool.end(), [](const std::vector<int> &ip) {
       if (std::any_of(ip.begin(), ip.end(),
-                      [&](int part) { return part == 46; })) {
+                      [](int part) { return part == 46; })) {
         std::cout << ip << std::endl;
       }
     });
