@@ -47,7 +47,9 @@ set_target_properties(${project_name} PROPERTIES
 # )
 # endif()
 
-install(TARGETS ${project_name} RUNTIME DESTINATION bin)
+install(TARGETS ${project_name} RUNTIME DESTINATION /usr/local/bin)
+install(FILES ${CMAKE_SOURCE_DIR}/ip_filter.tsv DESTINATION /usr/local/bin)
+install(FILES ${CMAKE_SOURCE_DIR}/start.sh DESTINATION /usr/local/bin)
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 	set(CPACK_GENERATOR TGZ)
