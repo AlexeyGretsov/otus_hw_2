@@ -27,13 +27,13 @@ std::vector<int> parseIp(const std::string &str) {
   std::string::size_type start = 0;
   std::string::size_type stop = str.find_first_of(delim);
   while (stop != std::string::npos) {
-    r.push_back(std::atoi(str.substr(start, stop - start).c_str()));
+    r.push_back(std::stoi(str.substr(start, stop - start)));
 
     start = stop + 1;
     stop = str.find_first_of(delim, start);
   }
 
-  r.push_back(std::atoi(str.substr(start).c_str()));
+  r.push_back(std::stoi(str.substr(start)));
 
   return r;
 }
